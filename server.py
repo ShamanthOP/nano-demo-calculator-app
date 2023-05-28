@@ -12,14 +12,14 @@ def add():
     data = request.get_json()
     first = data['first']
     second = data['second']
-    return jsonify(result=first+second)
+    return jsonify(result=first+second), 200
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
     data = request.get_json()
     first = data['first']
     second = data['second']
-    return jsonify(result=first-second)
+    return jsonify(result=first-second), 200
 
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
